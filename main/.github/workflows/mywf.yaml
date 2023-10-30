@@ -1,0 +1,26 @@
+name: My Combined Workflow
+
+on:
+  push: # This triggers the workflow on a push event
+    branches:
+      - main
+
+  pull_request: # This triggers the workflow on a pull request event
+
+  workflow_dispatch: # This allows manual triggering with parameters
+    inputs:
+      parameter1:
+        description: 'Description for parameter1'
+        required: false
+        default: 'Default value'
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1
+        run: echo "This step runs for both manual and auto triggers."
+
+      - name: Step 2
+        run: echo "You can use input parameters here, e.g., ${{ inputs.parameter1 }}"
