@@ -1,4 +1,4 @@
-name: My Combined Workflow
+name: My Combined Workflow22
 
 on:
   push: # This triggers the workflow on a push event
